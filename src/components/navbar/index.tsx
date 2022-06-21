@@ -4,12 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import {
-  IconButton,
-  Link,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
+import { Divider, IconButton, Link } from "@mui/material";
 import AbcIcon from "@mui/icons-material/Abc";
 import LeftMenu from "./LeftMenu";
 import "./style.scss";
@@ -25,13 +20,10 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import { useNavigate } from "react-router-dom";
-import ChangeLanguageBtn from "./changeLanguageButton";
 import Icon from "@mdi/react";
 import { leftMenuData } from "../../mocks/langding";
-
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { ColorModeContext } from "../../AppMode";
+import SwitchLanguageButton from "./switchLanguageButton";
+import SwitchMode from "./swtichMode";
 
 export default function ButtonAppBar() {
   const theme = useTheme();
@@ -245,9 +237,6 @@ const ListRightMenu = ({
 }) => {
   const { t } = useTranslation();
 
-  const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
-
   return (
     <Box
       sx={{
@@ -258,7 +247,12 @@ const ListRightMenu = ({
       role="presentation"
       className="drawer_right_menu"
     >
-      <Box>
+      <Box
+        sx={{
+          margin: "8px",
+        }}
+        className="drawer_right_menu_header"
+      >
         <Typography variant="h6" component="h6">
           {t("SETTING")}
         </Typography>
@@ -276,39 +270,9 @@ const ListRightMenu = ({
           </IconButton>
         </Box>
       </Box>
-      <ChangeLanguageBtn />
-      <Box
-        sx={{
-          display: "flex",
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "text.primary",
-          borderRadius: 1,
-          p: 3,
-        }}
-      >
-        <ToggleButtonGroup
-          color="primary"
-          value={theme.palette.mode}
-          exclusive
-          onChange={(
-            event: React.MouseEvent<HTMLElement>,
-            newAlignment: string
-          ) => {
-            colorMode.toggleColorMode(newAlignment);
-          }}
-        >
-          <ToggleButton value="light" className="space-x-2">
-            <Brightness7Icon />
-            <Typography variant="body2">Light</Typography>
-          </ToggleButton>
-          <ToggleButton value="dark" className="space-x-2">
-            <Brightness4Icon />
-            <Typography variant="body2">Dark</Typography>
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
+      <Divider />
+      <SwitchLanguageButton />
+      <SwitchMode />
     </Box>
   );
 };

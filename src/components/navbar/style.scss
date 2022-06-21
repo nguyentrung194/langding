@@ -43,10 +43,15 @@
 }
 
 .drawer_right_menu {
-  position: relative;
+  // position: relative;
+  & .drawer_right_menu_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   & .icon_close {
-    position: absolute;
-    top: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
   }
 }
