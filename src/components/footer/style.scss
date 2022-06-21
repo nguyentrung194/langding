@@ -1,0 +1,25 @@
+@keyframes Gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.footer_container {
+  background: linear-gradient(-45deg, #284052, #3a5570, #092a46, #2b2b2b);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 8s ease infinite;
+  animation: Gradient 8s ease infinite;
+}
+
+.footer_banner {
+  background: linear-gradient(
+    315deg,
+    rgb(5, 84, 129) 20%,
+    rgb(5, 61, 163) 80%
+  );
+}

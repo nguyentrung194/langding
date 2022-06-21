@@ -1,0 +1,69 @@
+.cus_button_link {
+  text-decoration: none !important;
+  font-size: 16px;
+  & > div > svg {
+    fill: #216c83;
+  }
+
+  &:hover {
+    color: #0b9fe4 !important;
+    fill: #0b9fe4 !important;
+  }
+  &:focus {
+    color: #0b9fe4 !important;
+    fill: #0b9fe4 !important;
+  }
+  transition: color 0.3s linear;
+  padding: 4px 0px;
+  margin: 0px 2px;
+  display: flex;
+  cursor: pointer;
+}
+
+.cus_group_hover {
+  &.isOnDrawer {
+    width: 100%;
+  }
+  .cus_button_menu {
+    position: relative;
+    z-index: 4;
+    left: 60px;
+  }
+  .cus_group_item {
+    display: none;
+    position: absolute;
+    padding-top: 10px;
+    top: 0;
+    right: -50%;
+    width: 256px;
+    & > * {
+      // color: white !important;
+    }
+    &.isOnDrawer {
+      width: 100%;
+      right: 0;
+    }
+  }
+
+  &:hover .cus_group_item {
+    display: flex;
+    & > * {
+      color: #000 !important;
+    }
+  }
+  transition: all 5s linear !important;
+}
+
+.cus_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover > * {
+    color: #0b9fe4;
+  }
+  &:focus > * {
+    color: #0b9fe4;
+  }
+  transition: color 0.3s linear;
+}

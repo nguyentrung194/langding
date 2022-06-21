@@ -1,0 +1,52 @@
+.cus_navbar_Toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cus_navbar_left_Toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cus_button_sign_up {
+  margin-right: 24px !important;
+  &:hover > * {
+    // box-shadow: 0px 15px 35px rgb(20 200 179 / 30%);
+  }
+}
+
+.menu_top_baner {
+  background: linear-gradient(
+    315deg,
+    rgb(18, 202, 226) 20%,
+    rgb(28, 231, 204) 80%
+  );
+  padding: 6px;
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    padding: 0 0.5rem;
+  }
+  &.menu_top_baner_text_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
+}
+
+.drawer_right_menu {
+  position: relative;
+  & .icon_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
